@@ -67,3 +67,19 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
 .brand{display:inline-flex;align-items:center;gap:10px}
 .brand-photo{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center 35%;border:2px solid #a8d6e1;flex-shrink:0}
 @media(max-width:650px){.brand{gap:7px;font-size:16px}.brand-photo{width:34px;height:34px}.nav{gap:9px;font-size:11px}}
+
+/* v2.0: restrained mathematical header, homepage only */
+.math-banner{background:linear-gradient(115deg,#203653 0%,#2c4d70 100%);color:#fff;border-bottom:3px solid #90c6d2;overflow:hidden}
+.math-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:176px;padding-top:26px;padding-bottom:26px}
+.math-banner-copy{min-width:0;position:relative;z-index:1}
+.math-banner-kicker{font-size:10px;font-weight:800;letter-spacing:.2em;color:#a8d9e3}
+.math-banner h1{font-size:clamp(27px,4.5vw,43px);line-height:1.13;letter-spacing:-.025em;margin:11px 0 0;color:#fff}
+.math-banner-art{width:255px;max-width:36%;flex:0 1 255px;color:#bdd8ec}
+.math-banner-art svg{width:100%;height:auto;display:block}
+@media(max-width:650px){
+ .math-banner-inner{min-height:146px;padding-top:24px;padding-bottom:24px;gap:6px}
+ .math-banner h1{font-size:clamp(25px,6vw,32px)}
+ .math-banner-kicker{font-size:9px;letter-spacing:.12em}
+ .math-banner-art{max-width:31%;flex-basis:140px}
+}
+@media(max-width:370px){.math-banner-art{max-width:23%}.math-banner h1{font-size:25px}}
