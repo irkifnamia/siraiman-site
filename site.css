@@ -62,3 +62,8 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
   color:#244e7d;
 }
 #guides .card.teal .label{color:#176d67}
+
+/* Header profile portrait */
+.brand{display:inline-flex;align-items:center;gap:10px}
+.brand-photo{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center 35%;border:2px solid #a8d6e1;flex-shrink:0}
+@media(max-width:650px){.brand{gap:7px;font-size:16px}.brand-photo{width:34px;height:34px}.nav{gap:9px;font-size:11px}}
