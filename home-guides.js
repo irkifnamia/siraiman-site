@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const subject=content?.subjects?.find(item=>item.id===root.dataset.subject);
   root.replaceChildren();
   if(!subject){root.textContent='Syllabus unavailable.';return;}
-  const note=document.createElement('p');note.className='guide-note';note.textContent='Chapter and subchapter titles are placeholders until the official syllabus is provided.';root.append(note);
+  const note=document.createElement('p');note.className='guide-note';note.textContent=subject.id==='SM015'?'Chapter titles shown where confirmed by the PSPM 1 assessment scheme. Remaining chapter and subchapter titles require the official syllabus.':'Chapter and subchapter titles are placeholders until the official syllabus is provided.';root.append(note);
   subject.chapters.forEach(ch=>{
    const details=document.createElement('details');details.className='syllabus-chapter';
    const summary=document.createElement('summary');summary.textContent=ch.title;details.append(summary);
-   const ul=document.createElement('ul');ch.subchapters.forEach(sc=>{const li=document.createElement('li');li.textContent=sc.title;ul.append(li)});details.append(ul);root.append(details);
+   const ul=document.createElement('ul');ch.subchapters.forEach(sc=>{const li=document.createElement('li');li.textContent=sc.title;ul.append(li)});if(ch.subchapters.length)details.append(ul);else{const p=document.createElement('p');p.className='guide-note';p.textContent='Subchapter details not yet provided.';details.append(p)}root.append(details);
   });
  });
 });
