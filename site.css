@@ -144,3 +144,16 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
 .syllabus-chapter summary::after{content:none}
 .syllabus-chapter ul{margin:0;padding:4px 18px 14px 36px;font-size:13px}
 @media(max-width:700px){.guide-accordions{grid-template-columns:1fr}.guide-accordion summary{min-height:0;padding:20px 48px 20px 21px}.guide-accordion summary strong{font-size:22px}.accordion-body{padding:16px 18px}}
+
+/* v2.9: in-site infographic image viewer */
+#viewer:has(.image-viewport){width:min(1050px,calc(100% - 24px));max-width:1050px;max-height:92dvh;overflow:auto;padding:22px}
+#viewer:has(.image-viewport) #viewer-content>h2{padding-right:38px;margin-bottom:8px}
+.image-tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:16px 0;padding:12px;background:#eaf1f8;border:1px solid #b6c6d8;border-radius:12px}
+.image-tool{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border:1px solid #9fb4c9;border-radius:9px;padding:9px 12px;background:#fff;color:#203653;font-size:13px;font-weight:800;text-decoration:none}
+.image-tool:hover{background:#dcebf8}
+.zoom-status{font-weight:800;color:#203653;min-width:48px;text-align:center}
+.download-tool{margin-left:auto;background:#203653;color:white;border-color:#203653}
+.download-tool:hover{background:#30577d;color:white}
+.image-viewport{height:min(65dvh,720px);overflow:auto;overscroll-behavior:contain;background:#e8edf3;border:1.5px solid #b6c6d8;border-radius:12px;padding:12px;text-align:center}
+.infographic-image{display:block;width:100%;max-width:none;height:auto;margin:auto;object-fit:contain}
+@media(max-width:650px){#viewer:has(.image-viewport){padding:15px}.image-tools{gap:7px;padding:9px}.image-tool{font-size:12px;padding:8px 10px}.download-tool{margin-left:0}.image-viewport{height:60dvh;padding:6px}}
