@@ -196,3 +196,19 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
 }
 @media(max-width:390px){.math-banner-art{max-width:42%}}
 @media(prefers-reduced-motion:reduce){.math-banner-art svg>g,.guide-accordion,.guide-accordion summary::after{transition:none}}
+
+/* Subject resource cards: expand in place, no separate viewer */
+#results .resource-accordion{padding:0;overflow:hidden;min-width:0}
+.resource-accordion>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;cursor:pointer;padding:20px 48px 20px 21px;position:relative;min-height:104px}
+.resource-accordion>summary::-webkit-details-marker{display:none}
+.resource-accordion>summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:28px;line-height:1;font-weight:500;color:var(--blue)}
+.resource-accordion[open]>summary::after{content:'−'}
+.resource-accordion>summary:focus-visible{outline:3px solid #5d92c7;outline-offset:-3px}
+.resource-accordion[open]{border-color:#7197bc;box-shadow:0 5px 16px #20365314}
+.resource-summary-text{min-width:0}
+.resource-accordion .tag{display:block;margin-bottom:9px}
+.resource-accordion h3{font-size:clamp(17px,2vw,21px);line-height:1.3;margin:0;overflow-wrap:anywhere}
+.resource-panel{padding:15px 18px 20px;border-top:1px solid var(--line);background:#f8fbff}
+.resource-panel .image-tools{margin:0 0 12px}
+.resource-panel .image-viewport{height:min(65dvh,680px)}
+@media(max-width:650px){.resource-accordion>summary{padding:18px 45px 18px 18px;min-height:96px}.resource-panel{padding:12px}.resource-panel .image-viewport{height:55dvh}.resource-panel .image-tools{gap:6px;padding:8px}.resource-panel .image-tool{font-size:12px;padding:8px}}
