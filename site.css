@@ -239,3 +239,11 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
  .math-banner-art{width:min(310px,85%);max-width:85%;flex:none;align-self:center}
 }
 @media(max-width:390px){.math-banner h1{font-size:clamp(31px,8.2vw,36px)}.math-banner-art{width:min(285px,86%);max-width:86%}}
+
+/* v3.9 — nine mathematical symbols on one continuous horizontal line */
+.math-banner-art{width:min(100%,760px);max-width:100%;flex:none;align-self:center}
+.math-banner-art svg{width:100%;height:auto;display:block}
+@media(max-width:650px){
+ .math-banner-inner{gap:18px;padding-bottom:26px}
+ .math-banner-art{width:100%;max-width:100%;flex:none;align-self:center}
+}
