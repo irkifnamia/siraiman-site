@@ -247,3 +247,9 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
  .math-banner-inner{gap:18px;padding-bottom:26px}
  .math-banner-art{width:100%;max-width:100%;flex:none;align-self:center}
 }
+
+/* v4.0 — keep the main navigation visible during vertical scrolling */
+body > header{position:sticky;top:0;z-index:1000;background:var(--navy);}
+@supports (top:env(safe-area-inset-top)){body > header{top:0}}
+html{scroll-padding-top:90px}
+@media(max-width:650px){html{scroll-padding-top:110px}}
