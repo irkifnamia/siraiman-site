@@ -83,3 +83,30 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
  .math-banner-art{max-width:31%;flex-basis:140px}
 }
 @media(max-width:370px){.math-banner-art{max-width:23%}.math-banner h1{font-size:25px}}
+
+/* v2.1 compact banner and restrained interactive UI */
+.math-banner-inner{min-height:122px;padding-top:16px;padding-bottom:16px;gap:18px}
+.math-banner h1{font-size:clamp(25px,3.5vw,34px);line-height:1.13;margin:7px 0 0}
+.math-banner-kicker{font-size:10px;letter-spacing:.12em}
+.math-banner-art{width:300px;max-width:42%;flex:0 1 300px;opacity:.9}
+#guides .container.section{padding-top:30px;padding-bottom:45px}
+#guides .section-head{margin-bottom:19px}
+#guides .card{position:relative;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;box-shadow:0 3px 12px #2036530b}
+#guides .card:hover,#guides .card:focus-visible{border-color:#467baf;transform:translateY(-2px);box-shadow:0 9px 22px #20365316}
+#guides .card .go{display:inline-flex;align-items:center;gap:6px}
+#guides .card h3{letter-spacing:-.015em}
+#subjects .card{transition:border-color .18s ease,transform .18s ease}
+#subjects .card:hover,#subjects .card:focus-visible{border-color:#467baf;transform:translateY(-2px)}
+@media(max-width:650px){
+ .math-banner-inner{min-height:112px;padding-top:17px;padding-bottom:17px;gap:10px}
+ .math-banner h1{font-size:clamp(23px,5.5vw,29px);line-height:1.13}
+ .math-banner-kicker{font-size:8px;letter-spacing:.075em;white-space:nowrap}
+ .math-banner-art{max-width:39%;flex-basis:155px}
+ #guides .container.section{padding-top:28px;padding-bottom:36px}
+ #guides .card{padding:21px}
+ #guides .card .label{font-size:17px;margin-bottom:10px}
+ #guides .card h3{font-size:21px}
+ #guides .card p{margin-bottom:13px}
+}
+@media(max-width:390px){.math-banner-art{max-width:32%}.math-banner h1{font-size:23px}.math-banner-kicker{font-size:7.5px}}
+@media(prefers-reduced-motion:reduce){#guides .card,#subjects .card{transition:none}#guides .card:hover,#subjects .card:hover{transform:none}}
