@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c1229"><meta name="description" content="SIR AIMAN SITE — SM015 and SM025 Mathematics learning materials.">
+<title>SIR AIMAN SITE | Mathematics Learning Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1128;--panel:#17223f;--muted:#acb8d2;--cyan:#91e9f6;--violet:#b4a4ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:#f5f7ff;font:14px/1.65 'DM Sans',sans-serif}
+body:before{content:"";position:absolute;pointer-events:none;top:50px;right:0;width:480px;height:480px;background:#5441b327;filter:blur(105px);border-radius:50%}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1160px;width:calc(100% - 44px);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0b1128df;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff15}
+.bar{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font:800 19px 'Outfit',sans-serif;letter-spacing:.04em;line-height:1}
+.logo span:first-child{display:grid;place-items:center;background:linear-gradient(140deg,#84e9f7,#b4a1ff);color:#16203f;border-radius:12px;width:42px;height:42px;font-size:28px}
+.logo b{color:var(--cyan)}.logo small{display:block;margin-top:7px;color:#8799c0;letter-spacing:.15em;font:800 9px 'DM Sans',sans-serif}
+nav{display:flex;gap:30px;color:#b1bbd2;font-weight:700;font-size:13px}nav a:hover{color:#fff}
+.top-action{padding:10px 16px;border:1px solid #aab8e14d;border-radius:12px;font-weight:800;font-size:12px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;min-height:555px;padding:58px 0}
+.kicker{font-size:11px;letter-spacing:.17em;color:var(--violet);font-weight:800}
+.hero h1{font:800 clamp(48px,6vw,78px)/1.08 'Outfit',sans-serif;letter-spacing:-.055em;margin:19px 0}
+.gradient{background:linear-gradient(90deg,#81e8f8,#baa3ff);color:transparent;background-clip:text}
+.hero p{color:var(--muted);font-size:15px;max-width:500px;line-height:1.85}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:20px;border:1px solid #ffffff25;padding:13px 20px;border-radius:12px;font-size:13px;font-weight:800;background:#ffffff08;color:#fff}
+.btn.primary{background:linear-gradient(110deg,#89e6f5,#b2a0ff);color:#10182e;border:0}
+.meta{font-size:12px!important;margin-top:32px;color:#98a6c5!important}
+.hero-art{display:grid;place-items:center;height:410px;position:relative}
+.orbit{position:absolute;width:390px;height:390px;border:1px solid #768bd02a;border-radius:50%;box-shadow:0 0 0 50px #ffffff04}
+.graph-card{position:relative;width:min(95%,420px);background:linear-gradient(140deg,#23385f,#111b35);border:1px solid #94aaf455;border-radius:24px;padding:18px;transform:rotate(-4deg);box-shadow:0 26px 70px #01040db3}
+.graph-head,.graph-foot{display:flex;align-items:center;justify-content:space-between;font-weight:800;letter-spacing:.12em;color:#9eadcc;font-size:10px}
+.dots{color:#ffb9ab;font-size:18px;letter-spacing:4px}
+.graph-card svg{width:100%;display:block}
+section{scroll-margin-top:85px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:25px}
+h2{font:750 clamp(32px,4vw,44px)/1.15 'Outfit',sans-serif;letter-spacing:-.025em;margin:5px 0}
+.section-head>p{color:var(--muted);font-size:13px;max-width:320px;margin:0}
+.subjects{padding:35px 0 85px}.subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.subject{border:1px solid #ffffff24;background:linear-gradient(125deg,#29224e,#18203f);border-radius:22px;padding:28px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+.subject:nth-child(2){background:linear-gradient(125deg,#124255,#16213f)}
+.subject-top,.subject-bottom{display:flex;align-items:center;justify-content:space-between}
+.subject-top span:first-child{font-size:10px;letter-spacing:.18em;color:#c3bafd;font-weight:800}
+.subject-top span:last-child{font:600 47px 'Outfit',sans-serif;color:#c3baff}
+.subject:nth-child(2) .subject-top span:last-child{color:#8deafa}
+.subject h3{font:800 42px/1 'Outfit',sans-serif;margin:10px 0 3px}
+.subject p{color:#dae0f6;font-weight:700;margin:0}.subject small{color:#abb6d7}
+.subject-bottom{font-size:12px;color:#c1cbdd;margin-top:18px}
+.subject-bottom b{display:grid;place-items:center;width:37px;height:37px;border-radius:50%;background:#ffffff22;font-size:20px}
+.catalogue{background:linear-gradient(180deg,#101a34,#0c132b);border-top:1px solid #ffffff10;border-bottom:1px solid #ffffff10;padding:80px 0 100px}
+.filters{background:#1a2543;border:1px solid #a3b3d72c;padding:23px;border-radius:22px}
+.search-line{display:flex;align-items:center;gap:10px}
+.search-line input{min-width:0;flex:1;background:#111a32;border:1px solid #9caad34d;border-radius:12px;color:#fff;padding:16px}
+.search-line button{border:0;background:transparent;color:#bdcae8;font-weight:700;font-size:12px}
+.filter-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:18px}
+.filter-row label{font-size:11px;color:#bfc9e2;font-weight:800}
+.filter-row select{display:block;width:100%;min-width:0;margin-top:7px;background:#101a32;color:#edf3ff;border:1px solid #9aadd244;padding:12px 8px;border-radius:10px;font-size:12px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid #ffffff18}
+.pill{border:1px solid #c3c7f434;background:#ffffff0a;border-radius:25px;color:#cad3ec;padding:9px 14px;font-size:12px;font-weight:800}
+.pill[aria-pressed=true]{border-color:#b6a7ff;background:#ac9aff29;color:#fff}
+.results{margin-top:37px}.results-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.results-top h3{font:700 25px 'Outfit',sans-serif;margin:0}.results-top p{font-size:12px;color:#a4b1cd;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:20px}
+.card{border-radius:17px;background:#17213c;border:1px solid #ffffff1b;overflow:hidden}
+.cover{min-height:155px;background:linear-gradient(125deg,#36306a,#194259);display:grid;place-items:center;font-size:61px;color:#c7c2ff}
+.card-body{padding:21px}.chip{color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}
+.card h4{font:700 21px 'Outfit',sans-serif;margin:9px 0}.card p{color:#a5b2cf;font-size:13px}
+.crumb{color:#95a5c8;font-size:11px;margin:18px 0}.open-resource{width:100%;border:0;border-top:1px solid #ffffff21;background:none;text-align:left;padding:13px 0 0;color:var(--cyan);font-weight:800}
+.empty{margin-top:19px;border:1px dashed #8196c45e;border-radius:21px;text-align:center;padding:50px 17px;background:#17213a}
+.empty .symbol{font-size:50px;color:var(--violet)}.empty h3{font:700 25px 'Outfit',sans-serif;margin:3px}.empty p{color:#b2bfd9;font-size:13px;max-width:530px;margin:8px auto 0}
+.chapter-block{margin-top:15px;border:1px solid #ffffff20;border-radius:15px;background:#15213d;overflow:hidden}
+.chapter-block summary{padding:15px 20px;cursor:pointer;font-weight:800;color:#e4eaff}
+.chapter-block ul{margin:0;padding:0 20px 16px 45px;color:#c0cce3;font-size:13px}
+.chapter-block li{padding:5px}.syllabus-note{font-size:12px;color:#9ca9c9;margin-top:14px}
+.chapter-panel{margin-top:25px}.chapter-panel h3{font:700 24px 'Outfit',sans-serif}
+.closing{padding:72px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.closing h2{max-width:650px}footer{border-top:1px solid #ffffff1c;padding:26px 0;color:#9bacca;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+dialog{max-width:620px;width:calc(100% - 28px);max-height:85dvh;overflow:auto;border:1px solid #7a8bbb;background:#192440;color:#fff;border-radius:19px;padding:27px}
+dialog::backdrop{background:#020713cf}dialog .close{float:right;background:#ffffff16;color:#fff;border:0;border-radius:8px;font-size:24px}
+dialog h2{margin-top:10px}.step{border:1px solid #ffffff2b;padding:14px;border-radius:12px;margin-top:12px;white-space:pre-wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:68px;gap:0}.hero-art{height:330px}.orbit{width:290px;height:290px}.graph-card{max-width:355px}.filter-row{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.bar{min-height:66px}.logo{font-size:16px}.logo span:first-child{width:36px;height:36px;font-size:25px}nav{display:none}.top-action{font-size:11px}.hero{padding-top:45px}.hero h1{font-size:49px}.hero-art{height:280px}.subject-grid,.grid{grid-template-columns:1fr}.subject{min-height:210px}.section-head{display:block}.section-head>p{margin-top:12px}.catalogue{padding:55px 0}.filters{padding:15px}.filter-row{gap:10px}.filter-row select{font-size:11px}.search-line{flex-wrap:wrap}.search-line button{margin-left:auto}.closing{display:block;padding:60px 0}.closing .btn{margin-top:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style><script src="content.js" defer></script></head>
+<body>
+<header><div class="wrap bar"><a href="#home" class="logo"><span>∑</span><span>SIR AIMAN <b>SITE</b><small>THE MATHEMATICS HUB</small></span></a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#explore">Materials</a></nav><a class="top-action" href="#explore">Explore ↗</a></div></header>
+<main><section id="home" class="wrap hero"><div><div class="kicker">✦ YOUR SEMESTER 2 LEARNING SPACE</div><h1>Mathematics,<br><span class="gradient">made clearer.</span></h1><p>Your go-to space for visual notes, animated explanations, and step-by-step solutions. Learn your way. Master every chapter.</p><div class="actions"><a class="btn primary" href="#explore">Explore materials ↗</a><a class="btn" href="#subjects">Browse subjects →</a></div><p class="meta">✧ Two subjects. One place to grow. <strong>SM015 &amp; SM025 Mathematics</strong></p></div>
+<div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="graph-card"><div class="graph-head"><span class="dots">● ● ●</span><span>MATHEMATICS / VISUALIZE</span></div><svg viewBox="0 0 390 290"><defs><linearGradient id="cv"><stop stop-color="#7deefb"/><stop offset="1" stop-color="#b5a1ff"/></linearGradient></defs><g stroke="#a8bbff" stroke-opacity=".13"><path d="M25 40H370M25 85H370M25 130H370M25 175H370M25 220H370M25 265H370M65 20V280M120 20V280M175 20V280M230 20V280M285 20V280M340 20V280"/></g><path d="M20 205H372M175 275V20" stroke="#899cc7" stroke-width="2" opacity=".6"/><path d="M25 235C90 265 90 155 145 177S205 250 250 126S320 52 365 66" stroke="url(#cv)" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="250" cy="126" r="6" fill="#90eff6"/><text x="45" y="54" font-size="16" fill="#b7c6ee">f(x)</text><text x="263" y="109" font-size="13" fill="#b7c6ee">(x, y)</text></svg><div class="graph-foot"><span>EXPLORE THE POSSIBILITIES</span><span>01 / ∞</span></div></div></div></section>
+<section class="wrap subjects" id="subjects"><div class="section-head"><div><div class="kicker">CHOOSE YOUR PATH</div><h2>Your subjects<span style="color:var(--cyan)">.</span></h2></div><p>Start with a subject, then explore chapters and subchapters.</p></div><div class="subject-grid" id="subject-cards"></div><div class="chapter-panel" id="chapter-panel"></div></section>
+<section class="catalogue" id="explore"><div class="wrap"><div class="section-head"><div><div class="kicker">YOUR RESOURCE LIBRARY</div><h2>Find what you need<span style="color:var(--cyan)">.</span></h2></div><p>Search by material, subject, chapter or subchapter. Everything is organized in one place.</p></div>
+<div class="filters"><div class="search-line"><input type="search" id="search" placeholder="⌕  Search topics, keywords, materials..." aria-label="Search materials"><button id="reset" type="button">Clear filters ↺</button></div>
+<div class="filter-row"><label>Material type<select id="type"><option value="all">All materials</option><option value="infographic">Infographics</option><option value="video">Videos</option><option value="solution">Worked examples &amp; solutions</option></select></label><label>Subject<select id="subject"><option value="all">All subjects</option></select></label><label>Chapter<select id="chapter"><option value="all">All chapters</option></select></label><label>Subchapter<select id="subchapter"><option value="all">All subchapters</option></select></label></div>
+<div class="pills"><button class="pill" type="button" data-type="all" aria-pressed="true">✦ All resources</button><button class="pill" type="button" data-type="infographic" aria-pressed="false">▧ Infographics</button><button class="pill" type="button" data-type="video" aria-pressed="false">▷ Videos</button><button class="pill" type="button" data-type="solution" aria-pressed="false">≡ Worked solutions</button></div></div>
+<div class="results"><div class="results-top"><h3>Learning materials</h3><p id="count" aria-live="polite">0 resources</p></div><div class="grid" id="resource-grid"></div><div class="empty" id="empty"><div class="symbol">✦</div><h3>Materials are coming soon</h3><p>Your resource library is ready. Infographics, videos and worked solutions will appear here once Sir Aiman adds them. Try browsing the subject structure above.</p></div></div></div></section>
+<section class="wrap closing"><div><div class="kicker">KEEP EXPLORING</div><h2>Every great solution starts with a question.</h2><p style="color:var(--muted)">Stay curious, practice consistently, and let mathematics make sense.</p></div><a href="#explore" class="btn primary">Back to materials ↗</a></section></main>
+<footer><div class="wrap footer-row"><strong>∑ &nbsp; SIR AIMAN SITE</strong><span>Made for learning. Built for you.</span><span>© <span id="year"></span> Sir Aiman</span></div></footer>
+<dialog id="viewer"><button type="button" class="close" id="close" aria-label="Close">×</button><div id="viewer-content"></div></dialog>
+<script defer>
+document.addEventListener('DOMContentLoaded',function(){
+const data=window.SIR_AIMAN_CONTENT||{subjects:[],resources:[]};
+const el=id=>document.getElementById(id),subject=el('subject'),chapter=el('chapter'),sub=el('subchapter'),type=el('type'),search=el('search');
+const types={infographic:'Infographic',video:'Animated video',solution:'Worked example & solution'};
+function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function opt(val,text){const o=node('option',text);o.value=val;return o;}
+function sfind(id){return data.subjects.find(s=>s.id===id)}
+function cfind(s,id){return s&&s.chapters.find(c=>c.id===id)}
+function scfind(c,id){return c&&c.subchapters.find(x=>x.id===id)}
+function refreshChapters(){const old=chapter.value;chapter.replaceChildren(opt('all','All chapters'));data.subjects.filter(s=>subject.value==='all'||s.id===subject.value).forEach(s=>s.chapters.forEach(c=>chapter.append(opt(c.id,(subject.value==='all'?s.id+' · ':'')+c.title))));chapter.value=Array.from(chapter.options).some(o=>o.value===old)?old:'all';refreshSubs()}
+function refreshSubs(){const old=sub.value;sub.replaceChildren(opt('all','All subchapters'));data.subjects.filter(s=>subject.value==='all'||s.id===subject.value).forEach(s=>s.chapters.filter(c=>chapter.value==='all'||c.id===chapter.value).forEach(c=>c.subchapters.forEach(x=>sub.append(opt(x.id,(subject.value==='all'?s.id+' · ':'')+x.title)))));sub.value=Array.from(sub.options).some(o=>o.value===old)?old:'all'}
+function showSubjects(){const target=el('subject-cards'),panel=el('chapter-panel');target.replaceChildren();panel.replaceChildren();data.subjects.forEach((s,i)=>{const card=node('a',undefined,'subject');card.href='#explore';const head=node('div',undefined,'subject-top');head.append(node('span','SUBJECT 0'+(i+1)),node('span',i?'∫':'ƒ'));const center=node('div');center.append(node('h3',s.id),node('p',s.name),node('small',s.description));const foot=node('div',undefined,'subject-bottom');foot.append(node('span',s.chapters.length+' chapters to explore'),node('b','↗'));card.append(head,center,foot);card.addEventListener('click',()=>{subject.value=s.id;chapter.value='all';refreshChapters();render()});target.append(card);const heading=node('h3',s.name+' — Chapter guide');panel.append(heading);s.chapters.forEach(c=>{const details=node('details',undefined,'chapter-block'),sum=node('summary',c.title),ul=node('ul');c.subchapters.forEach(sc=>ul.append(node('li',sc.title)));details.append(sum,ul);panel.append(details)})});panel.append(node('p','Chapter names are provisional examples and will be replaced with your verified syllabus.','syllabus-note'))}
+function render(){const q=search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);const results=data.resources.filter(r=>{const s=sfind(r.subject),c=cfind(s,r.chapter),sc=scfind(c,r.subchapter);const words=[r.title,r.description,r.subject,s&&s.name,c&&c.title,sc&&sc.title,types[r.type],...(r.tags||[])].join(' ').toLowerCase();return (type.value==='all'||r.type===type.value)&&(subject.value==='all'||r.subject===subject.value)&&(chapter.value==='all'||r.chapter===chapter.value)&&(sub.value==='all'||r.subchapter===sub.value)&&q.every(word=>words.includes(word))});el('count').textContent=results.length+' '+(results.length===1?'resource':'resources')+' available';const grid=el('resource-grid');grid.replaceChildren();el('empty').hidden=results.length>0;results.forEach(r=>{const s=sfind(r.subject),c=cfind(s,r.chapter),sc=scfind(c,r.subchapter),card=node('article',undefined,'card'),cover=node('div',({infographic:'▧',video:'▷',solution:'≡'})[r.type]||'✦','cover'),body=node('div',undefined,'card-body');body.append(node('span',types[r.type]||r.type,'chip'),node('h4',r.title),node('p',r.description||'Explore this material'),node('div',(c?c.title:'Chapter')+' · '+(sc?sc.title:'Subchapter'),'crumb'));const open=node('button','Open material ↗','open-resource');open.addEventListener('click',()=>openResource(r));body.append(open);card.append(cover,body);grid.append(card)});document.querySelectorAll('[data-type]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.type===type.value)))}
+function openResource(r){const d=el('viewer'),body=el('viewer-content');body.replaceChildren(node('div',(types[r.type]||'Resource')+' · '+r.subject,'kicker'),node('h2',r.title),node('p',r.description||''));if(r.type==='solution'&&Array.isArray(r.steps)){r.steps.forEach(st=>{const block=node('div',undefined,'step');block.append(node('strong',st.title),node('p',st.detail));body.append(block)})}else if(r.url){try{const u=new URL(r.url,location.href);if(['https:','http:'].includes(u.protocol)){const a=node('a','Open resource ↗','btn primary');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';body.append(a)}}catch(e){}}d.showModal()}
+data.subjects.forEach(s=>subject.append(opt(s.id,s.name)));refreshChapters();showSubjects();render();
+search.addEventListener('input',render);type.addEventListener('change',render);subject.addEventListener('change',()=>{chapter.value='all';refreshChapters();render()});chapter.addEventListener('change',()=>{refreshSubs();render()});sub.addEventListener('change',render);
+document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{type.value=b.dataset.type;render()}));
+el('reset').addEventListener('click',()=>{search.value='';type.value='all';subject.value='all';chapter.value='all';refreshChapters();render()});
+el('close').addEventListener('click',()=>el('viewer').close());el('viewer').addEventListener('click',e=>{if(e.target===el('viewer'))e.target.close()});
+el('year').textContent=new Date().getFullYear();
+});
+</script></body></html>
