@@ -1,15 +1,15 @@
 window.SIR_AIMAN_CONTENT = {
   // SM015 chapter titles verified against supplied PSPM 1 scheme.
-  // Chapters 3, 4, 6, 7 and detailed subchapter titles remain unconfirmed.
+  // All 10 chapter titles are confirmed; detailed subchapter titles remain unconfirmed.
   subjects: [
     {id:"SM015", name:"Mathematics SM015", description:"Explore core mathematics with clear explanations.", chapters:[
       {id:"sm015-1",title:"Chapter 1 — Number System",subchapters:[{id:"sm015-1-1",title:"1.1 — Title not yet confirmed"},{id:"sm015-1-2",title:"1.2 — Title not yet confirmed"}]},
       {id:"sm015-2",title:"Chapter 2 — Equations, Inequalities and Absolute Values",subchapters:[{id:"sm015-2-1",title:"2.1 — Title not yet confirmed"}]},
-      {id:"sm015-3",title:"Chapter 3 — Title not yet confirmed",subchapters:[]},
-      {id:"sm015-4",title:"Chapter 4 — Title not yet confirmed",subchapters:[]},
+      {id:"sm015-3",title:"Chapter 3 — Sequences and Series",subchapters:[]},
+      {id:"sm015-4",title:"Chapter 4 — Matrices and Systems of Linear Equations",subchapters:[]},
       {id:"sm015-5",title:"Chapter 5 — Functions and Graphs",subchapters:[]},
-      {id:"sm015-6",title:"Chapter 6 — Title not yet confirmed",subchapters:[]},
-      {id:"sm015-7",title:"Chapter 7 — Title not yet confirmed",subchapters:[]},
+      {id:"sm015-6",title:"Chapter 6 — Polynomials",subchapters:[]},
+      {id:"sm015-7",title:"Chapter 7 — Trigonometric Functions",subchapters:[]},
       {id:"sm015-8",title:"Chapter 8 — Limits and Continuity",subchapters:[]},
       {id:"sm015-9",title:"Chapter 9 — Differentiation",subchapters:[]},
       {id:"sm015-10",title:"Chapter 10 — Applications of Differentiation",subchapters:[]}
