@@ -212,3 +212,18 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
 .resource-panel .image-tools{margin:0 0 12px}
 .resource-panel .image-viewport{height:min(65dvh,680px)}
 @media(max-width:650px){.resource-accordion>summary{padding:18px 45px 18px 18px;min-height:96px}.resource-panel{padding:12px}.resource-panel .image-viewport{height:55dvh}.resource-panel .image-tools{gap:6px;padding:8px}.resource-panel .image-tool{font-size:12px;padding:8px}}
+
+/* v3.7 — clear visual hierarchy: hero title above section headings */
+#guides .section-head h2,#subjects .section-head h2{font-size:clamp(28px,3vw,34px)}
+.math-banner h1{font-size:clamp(42px,4.5vw,54px);line-height:1.08;letter-spacing:-.035em}
+.math-banner-inner{min-height:205px;padding-top:28px;padding-bottom:28px}
+@media(max-width:650px){
+ .math-banner-inner{min-height:205px;padding-top:27px;padding-bottom:27px;gap:8px}
+ .math-banner h1{font-size:38px;line-height:1.08;letter-spacing:-.04em}
+ #guides .section-head h2,#subjects .section-head h2{font-size:29px;line-height:1.16}
+ .math-banner-art{max-width:39%;flex-basis:175px}
+}
+@media(max-width:390px){
+ .math-banner h1{font-size:clamp(32px,9.7vw,38px)}
+ .math-banner-art{max-width:35%}
+}
