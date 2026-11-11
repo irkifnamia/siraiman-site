@@ -28,3 +28,24 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
  .actions{gap:10px}
  .btn{padding:12px 15px}
 }
+
+/* v1.4 — fix actual root cause: .hero and .section shorthand
+   padding had overwritten .container's horizontal gutters. */
+.container.hero,
+.container.section,
+.band > .container.section {
+  padding-left: max(22px, env(safe-area-inset-left));
+  padding-right: max(22px, env(safe-area-inset-right));
+}
+@media (min-width:651px) {
+  .container.hero,
+  .container.section,
+  .band > .container.section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+@media (max-width:650px) {
+  .container.hero {padding-top:38px;padding-bottom:34px}
+  .container.section,.band > .container.section {padding-top:36px;padding-bottom:42px}
+}
