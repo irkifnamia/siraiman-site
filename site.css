@@ -168,3 +168,31 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
 #home-viewer:has(.image-viewport){width:min(1050px,calc(100% - 24px));max-width:1050px;max-height:92dvh;overflow:auto;padding:22px}
 #home-viewer:has(.image-viewport) #home-viewer-content>h2{padding-right:38px;margin-bottom:8px}
 @media(max-width:700px){#subjects .materials-browser .grid{grid-template-columns:1fr}#subjects .materials-browser .filter-grid{grid-template-columns:1fr}#home-viewer:has(.image-viewport){padding:15px}}
+
+/* v3.3: brighter, larger maths artwork and refined mobile experience */
+.math-banner{background:linear-gradient(115deg,#182d4b 0%,#25496b 62%,#315878 100%)}
+.math-banner-inner{min-height:160px;padding-top:22px;padding-bottom:22px}
+.math-banner-art{width:350px;max-width:48%;flex-basis:350px;opacity:1;filter:drop-shadow(0 2px 9px rgba(255,255,255,.12))}
+.math-banner-art svg{overflow:visible}
+.math-banner-art svg>g{transition:filter .2s ease,opacity .2s ease}
+.math-banner-art svg>g:hover{filter:brightness(1.3)}
+.guide-accordion{transition:border-color .18s ease,box-shadow .18s ease}
+.guide-accordion:hover{border-color:#759bc0;box-shadow:0 6px 18px #20365315}
+.guide-accordion[open]{box-shadow:0 7px 20px #20365314}
+.guide-accordion summary{touch-action:manipulation}
+.guide-accordion summary::after{transition:transform .18s ease}
+.guide-accordion[open] summary::after{transform:rotate(90deg)}
+.result button{min-height:40px;text-align:left}
+.result button:hover{text-decoration:underline}
+@media(max-width:650px){
+ .math-banner-inner{min-height:154px;padding-top:20px;padding-bottom:20px;gap:8px}
+ .math-banner-art{max-width:45%;flex-basis:190px}
+ .math-banner h1{font-size:clamp(23px,5.5vw,30px)}
+ .math-banner-kicker{white-space:normal;line-height:1.4}
+ .bar{flex-wrap:wrap;row-gap:3px;padding-top:9px;padding-bottom:8px}
+ .nav a{min-height:36px;display:inline-flex;align-items:center}
+ .guide-accordion summary{gap:7px}
+ .guide-accordion .accordion-hint{line-height:1.5}
+}
+@media(max-width:390px){.math-banner-art{max-width:42%}}
+@media(prefers-reduced-motion:reduce){.math-banner-art svg>g,.guide-accordion,.guide-accordion summary::after{transition:none}}
