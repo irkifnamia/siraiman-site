@@ -81,6 +81,69 @@ dialog h2{margin-top:10px}.step{border:1px solid #ffffff2b;padding:14px;border-r
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:68px;gap:0}.hero-art{height:330px}.orbit{width:290px;height:290px}.graph-card{max-width:355px}.filter-row{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.wrap{width:calc(100% - 32px)}.bar{min-height:66px}.logo{font-size:16px}.logo span:first-child{width:36px;height:36px;font-size:25px}nav{display:none}.top-action{font-size:11px}.hero{padding-top:45px}.hero h1{font-size:49px}.hero-art{height:280px}.subject-grid,.grid{grid-template-columns:1fr}.subject{min-height:210px}.section-head{display:block}.section-head>p{margin-top:12px}.catalogue{padding:55px 0}.filters{padding:15px}.filter-row{gap:10px}.filter-row select{font-size:11px}.search-line{flex-wrap:wrap}.search-line button{margin-left:auto}.closing{display:block;padding:60px 0}.closing .btn{margin-top:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* v1.1 — minimalist light design */
+:root{--bg:#f8fafc;--panel:#ffffff;--muted:#64748b;--cyan:#2563eb;--violet:#475569}
+body{background:#f8fafc;color:#14213d;font-size:15px}
+body:before{display:none}
+header{background:#ffffffed;border-bottom:1px solid #e6eaf0}
+.logo{color:#14213d}.logo span:first-child{background:#eaf1ff;color:#2563eb;border-radius:10px}.logo b{color:#2563eb}.logo small{color:#718096}
+nav{color:#475569}nav a:hover{color:#2563eb}
+.top-action{border:1px solid #dbe3ee;color:#334155}
+.hero{min-height:0;display:block;padding:84px 0 72px;max-width:1160px}
+.hero>div:first-child{max-width:760px}
+.kicker{color:#2563eb;letter-spacing:.12em}
+.hero h1{font-size:clamp(44px,6vw,70px);letter-spacing:-.055em;margin:16px 0}
+.gradient{background:none;color:#2563eb}
+.hero p{color:#64748b;font-size:16px;max-width:560px}
+.hero-art{display:none}
+.btn{background:#fff;color:#334155;border:1px solid #dbe3ee;gap:10px}
+.btn.primary{background:#2563eb;color:white;border:1px solid #2563eb}
+.meta{color:#7a879a!important}
+.subjects{padding:18px 0 70px}
+h2{font-size:clamp(29px,4vw,38px)}
+.section-head>p{color:#64748b}
+.subject-grid{gap:16px}
+.subject{background:#ffffff!important;border:1px solid #e2e8f0;border-radius:16px;min-height:192px;padding:25px;box-shadow:0 3px 14px #0f172a05}
+.subject:hover{border-color:#a8c5fb}
+.subject-top span:first-child{color:#64748b}
+.subject-top span:last-child,.subject:nth-child(2) .subject-top span:last-child{color:#cbd5e1;font-size:37px}
+.subject h3{font-size:36px;color:#0f172a}
+.subject p{color:#334155}
+.subject small,.subject-bottom{color:#64748b}
+.subject-bottom b{background:#eff6ff;color:#2563eb}
+.catalogue{background:#ffffff;border-top:1px solid #e9edf3;border-bottom:1px solid #e9edf3;padding:68px 0 80px}
+.filters{background:#f8fafc;border:1px solid #e2e8f0;border-radius:15px;padding:20px}
+.search-line input{background:white;color:#0f172a;border:1px solid #d8e1ed}
+.search-line input::placeholder{color:#94a3b8}
+.search-line button{color:#64748b}
+.filter-row label{color:#475569}
+.filter-row select{background:white;color:#334155;border:1px solid #d8e1ed}
+.pills{border-top:1px solid #e2e8f0}
+.pill{background:#ffffff;color:#475569;border:1px solid #dce3ed}
+.pill[aria-pressed=true]{background:#eff6ff;border-color:#93b8ff;color:#1d4ed8}
+.results-top h3{color:#14213d}.results-top p{color:#64748b}
+.card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px}
+.cover{background:#eef4ff;color:#2563eb;min-height:125px;font-size:45px}
+.chip{color:#2563eb}.card h4{color:#14213d}.card p,.crumb{color:#64748b}
+.open-resource{color:#2563eb;border-top:1px solid #e2e8f0}
+.empty{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:14px;padding:40px 16px}
+.empty .symbol{color:#94a3b8}.empty h3{color:#1e293b}.empty p{color:#64748b}
+.chapter-block{background:#fff;border:1px solid #e2e8f0}
+.chapter-block summary{color:#334155}.chapter-block ul{color:#64748b}
+.chapter-panel h3{color:#14213d}.syllabus-note{color:#64748b}
+.closing{padding:64px 0}footer{border-top:1px solid #e2e8f0;color:#64748b}
+dialog{background:white;color:#14213d;border:1px solid #e2e8f0}
+dialog .close{background:#eff3f8;color:#334155}
+.step{border:1px solid #e2e8f0}
+@media(max-width:600px){
+ .hero{padding:50px 0 48px}.hero h1{font-size:45px}
+ .hero p{font-size:14px}.meta{margin-top:22px}
+ .subjects{padding:10px 0 54px}.subject{min-height:175px}
+ .catalogue{padding:48px 0 60px}.filters{padding:13px}
+ .pills{gap:7px}.pill{padding:8px 10px;font-size:11px}
+ .closing{padding:46px 0}
+}
 </style><script src="content.js" defer></script></head>
 <body>
 <header><div class="wrap bar"><a href="#home" class="logo"><span>∑</span><span>SIR AIMAN <b>SITE</b><small>THE MATHEMATICS HUB</small></span></a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#explore">Materials</a></nav><a class="top-action" href="#explore">Explore ↗</a></div></header>
