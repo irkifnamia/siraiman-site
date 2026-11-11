@@ -49,3 +49,16 @@ dialog{max-width:600px;width:calc(100% - 30px);border:2px solid var(--line);bord
   .container.hero {padding-top:38px;padding-bottom:34px}
   .container.section,.band > .container.section {padding-top:36px;padding-bottom:42px}
 }
+
+/* v1.8 — make subject labels prominent on homepage guide cards */
+#guides .card .label{
+  display:block;
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(17px,2.5vw,21px);
+  font-weight:800;
+  letter-spacing:.015em;
+  line-height:1.35;
+  margin-bottom:15px;
+  color:#244e7d;
+}
+#guides .card.teal .label{color:#176d67}
