@@ -15,9 +15,18 @@ function render(){
  const arr=D.resources.filter(r=>{if(r.subject!==id)return false;const c=ch(r.chapter),sc=subch(c,r.subchapter);const text=[resourceTitle(r),r.title,r.description,r.type,c?.title,sc?.title,...(r.tags||[])].join(' ').toLowerCase();return(type.value==='all'||r.type===type.value)&&(chapter.value==='all'||r.chapter===chapter.value)&&(sub.value==='all'||r.subchapter===sub.value)&&terms.every(t=>text.includes(t))});
  results.replaceChildren();count.textContent=arr.length+' resources';$('empty').hidden=arr.length>0;
  arr.forEach(r=>{
+  if(r.type==='video'){
+   const card=n('article');card.className='result video-resource-row';
+   const info=n('div');info.className='resource-summary-text';
+   const tag=n('span','VIDEO');tag.className='tag';
+   info.append(tag,n('h3',resourceTitle(r)));
+   const watch=n('a','▶ Watch');watch.className='video-watch-button';
+   try{const u=new URL(r.url,location.href);if(u.protocol==='https:'&&(['tiktok.com','www.tiktok.com','m.tiktok.com'].includes(u.hostname))){watch.href=u.href;watch.target='_blank';watch.rel='noopener noreferrer'}else{watch.removeAttribute('href')}}catch(e){watch.removeAttribute('href')}
+   card.append(info,watch);results.append(card);return;
+  }
   const card=n('details');card.className='result resource-accordion';
   const summary=n('summary');const info=n('div');info.className='resource-summary-text';
-  const tag=n('span',({infographic:'INFOGRAPHIC',video:'VIDEO',solution:'WORKED EXAMPLE & SOLUTION'})[r.type]||r.type);tag.className='tag';
+  const tag=n('span',({infographic:'INFOGRAPHIC',solution:'WORKED EXAMPLE & SOLUTION'})[r.type]||r.type);tag.className='tag';
   info.append(tag,n('h3',resourceTitle(r)));summary.append(info);card.append(summary);
   const panel=n('div');panel.className='resource-panel';
   card.addEventListener('toggle',()=>{if(card.open&&!panel.dataset.loaded){populate(panel,r);panel.dataset.loaded='true'}});
@@ -38,26 +47,6 @@ function populate(body,r){
   tools.append(control('− Zoom out',()=>setZoom(zoom-.25)),status,control('+ Zoom in',()=>setZoom(zoom+.25)),control('Reset',()=>{setZoom(1);viewport.scrollTo({top:0,left:0})}));
   const download=n('a','↓ Download');download.className='image-tool download-tool';download.href=u.href;download.download=resourceTitle(r).replace(/[^a-z0-9_-]+/gi,'-')+'.'+(u.pathname.split('.').pop().match(/^(png|jpe?g|webp|gif)$/i)?.[0]||'png');download.rel='noopener';tools.append(download);
   viewport.append(img);body.append(tools,viewport);
- }else if(r.type==='video'&&r.url){
-  try{
-   const u=new URL(r.url,location.href);
-   if(u.protocol!=='https:'||!(u.hostname==='tiktok.com'||u.hostname.endsWith('.tiktok.com')))throw Error('Invalid TikTok URL');
-   const match=u.pathname.split('/video/')[1]?.split('/')[0]?.match(/^[0-9]+$/)?.[0];
-   if(match){
-    const notice=n('p','Embedded TikTok playback may be unavailable on some browsers or networks. You can always use the direct link below.');
-    notice.className='video-fallback-note';body.append(notice);
-    const embed=n('blockquote');embed.className='tiktok-embed';embed.setAttribute('cite',u.href);embed.setAttribute('data-video-id',match);
-    embed.style.maxWidth='605px';embed.style.minWidth='260px';
-    const section=n('section');const link=n('a','View this video on TikTok');link.href=u.href;link.target='_blank';link.rel='noopener noreferrer';section.append(link);embed.append(section);body.append(embed);
-    if(!document.querySelector('script[data-tiktok-embed]')){
-     const script=document.createElement('script');script.src='https://www.tiktok.com/embed.js';script.async=true;script.dataset.tiktokEmbed='true';document.body.append(script);
-    }else{
-     const old=document.querySelector('script[data-tiktok-embed]');
-     const fresh=document.createElement('script');fresh.src='https://www.tiktok.com/embed.js';fresh.async=true;fresh.dataset.tiktokEmbed='true';old.replaceWith(fresh);
-    }
-   }else{body.append(n('p','A full TikTok video URL is needed for embedded playback.'))}
-   const a=n('a','▶ Watch on TikTok ↗');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.className='btn video-external-link';body.append(a);
-  }catch(e){body.append(n('p','Video link unavailable.'))}
  }else if(r.type==='solution'&&Array.isArray(r.steps)){
   r.steps.forEach(s=>{const box=n('div');box.className='step';box.append(n('strong',s.title),n('p',s.detail));body.append(box)});
  }else if(r.url){
