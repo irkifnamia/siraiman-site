@@ -18,11 +18,11 @@ window.SIR_AIMAN_CONTENT = {
       {id:"sm025-1",title:"Chapter 1 — Numerical Solution",subchapters:[{id:"sm025-1-1",title:"1.1 — Title not yet confirmed"},{id:"sm025-1-2",title:"1.2 — Title not yet confirmed"}]},
       {id:"sm025-2",title:"Chapter 2 — Integration",subchapters:[{id:"sm025-2-1",title:"2.1 — Title not yet confirmed"},{id:"sm025-2-1a",title:"2.1(a) — Title not yet confirmed"}]},
       {id:"sm025-3",title:"Chapter 3 — First Order Differential Equations",subchapters:[]},
-      {id:"sm025-4",title:"Chapter 4 — Title to be confirmed",subchapters:[]},
-      {id:"sm025-5",title:"Chapter 5 — Title to be confirmed",subchapters:[]},
-      {id:"sm025-6",title:"Chapter 6 — Title to be confirmed",subchapters:[]},
-      {id:"sm025-7",title:"Chapter 7 — Title to be confirmed",subchapters:[]},
-      {id:"sm025-8",title:"Chapter 8 — Title to be confirmed",subchapters:[]},
+      {id:"sm025-4",title:"Chapter 4 — Conics",subchapters:[]},
+      {id:"sm025-5",title:"Chapter 5 — Vectors",subchapters:[]},
+      {id:"sm025-6",title:"Chapter 6 — Data Description",subchapters:[]},
+      {id:"sm025-7",title:"Chapter 7 — Probability",subchapters:[]},
+      {id:"sm025-8",title:"Chapter 8 — Random Variables",subchapters:[]},
       {id:"sm025-9",title:"Chapter 9 — Special Probability Distribution",subchapters:[]}
     ]}
   ],
