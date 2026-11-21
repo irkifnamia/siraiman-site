@@ -257,3 +257,11 @@ html{scroll-padding-top:90px}
 /* TikTok lesson viewer */
 .tiktok-video-frame{display:block;width:min(100%,380px);height:min(72vh,650px);min-height:440px;border:0;border-radius:12px;background:#111;margin:0 auto 16px}
 .resource-panel .btn{display:inline-flex;align-items:center;min-height:44px;margin-top:10px}
+
+/* v4.7 — direct video links without an embedded player or accordion */
+#results .video-resource-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;min-width:0}
+.video-resource-row .resource-summary-text{flex:1;min-width:0}
+.video-resource-row h3{font-size:clamp(17px,2vw,21px);line-height:1.3;margin:8px 0 0;overflow-wrap:anywhere}
+.video-watch-button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;padding:10px 17px;border-radius:11px;background:#285b88;color:white;font-weight:700;text-decoration:none;white-space:nowrap}
+.video-watch-button:hover,.video-watch-button:focus-visible{background:#19466e;color:white}
+@media(max-width:390px){#results .video-resource-row{padding:16px 13px;gap:8px}.video-watch-button{padding:10px 12px}}
