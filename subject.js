@@ -41,10 +41,10 @@ function populate(body,r){
  }else if(r.type==='video'&&r.url){
   try{
    const u=new URL(r.url,location.href);
-   if(u.protocol!=='https:'||!/(^|\\.)tiktok\\.com$/.test(u.hostname))throw Error('Invalid TikTok URL');
-   const match=u.pathname.match(/\\/video\\/(\\d+)/);
+   if(u.protocol!=='https:'||!(u.hostname==='tiktok.com'||u.hostname.endsWith('.tiktok.com')))throw Error('Invalid TikTok URL');
+   const match=u.pathname.split('/video/')[1]?.split('/')[0]?.match(/^[0-9]+$/)?.[0];
    if(match){
-    const frame=n('iframe');frame.src='https://www.tiktok.com/player/v1/'+match[1];frame.title=resourceTitle(r);frame.loading='lazy';frame.allow='fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.className='tiktok-video-frame';body.append(frame);
+    const frame=n('iframe');frame.src='https://www.tiktok.com/player/v1/'+match;frame.title=resourceTitle(r);frame.loading='lazy';frame.allow='fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.className='tiktok-video-frame';body.append(frame);
    }else{body.append(n('p','TikTok short link: open the video below. Inline playback will be available once its full video URL is supplied.'))}
    const a=n('a','▶ Watch on TikTok ↗');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.className='btn';body.append(a);
   }catch(e){body.append(n('p','Video link unavailable.'))}
