@@ -16,7 +16,7 @@ window.SIR_AIMAN_CONTENT = {
     ]},
     {id:"SM025", name:"Mathematics SM025", description:"Level up your mathematical thinking.", chapters:[
       {id:"sm025-1",title:"Chapter 1 — Numerical Solution",subchapters:[{id:"sm025-1-1",title:"1.1 — Title not yet confirmed"},{id:"sm025-1-2",title:"1.2 — Title not yet confirmed"}]},
-      {id:"sm025-2",title:"Chapter 2 — Integration",subchapters:[{id:"sm025-2-1",title:"2.1 — Title not yet confirmed"}]},
+      {id:"sm025-2",title:"Chapter 2 — Integration",subchapters:[{id:"sm025-2-1",title:"2.1 — Title not yet confirmed"},{id:"sm025-2-1a",title:"2.1(a) — Title not yet confirmed"}]},
       {id:"sm025-3",title:"Chapter 3 — First Order Differential Equations",subchapters:[]},
       {id:"sm025-4",title:"Chapter 4 — Title to be confirmed",subchapters:[]},
       {id:"sm025-5",title:"Chapter 5 — Title to be confirmed",subchapters:[]},
@@ -34,6 +34,7 @@ window.SIR_AIMAN_CONTENT = {
   // Types: infographic, video, solution
   // A solution may use steps:[{title:"Step 1",detail:"Explanation"}, ...]
   resources:[
+    {id:"sm025-2-1a-video-1",title:"SM025 / 2.1(a) / Video 1",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2-1a",description:"TikTok lesson for subchapter 2.1(a)",tags:["2.1a","2.1(a)","integration","video"],url:"https://vt.tiktok.com/ZSsJb6etS/"},
     {id:"sm015-1-1-infographic-1",title:"Subchapter 1.1 — Infographic 1",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-1.png"},
     {id:"sm015-1-1-infographic-2",title:"Subchapter 1.1 — Infographic 2",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-2.png"},
     {id:"sm015-1-1-infographic-3",title:"Subchapter 1.1 — Infographic 3",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-3.png"}
