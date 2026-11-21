@@ -44,9 +44,10 @@ function populate(body,r){
    if(u.protocol!=='https:'||!(u.hostname==='tiktok.com'||u.hostname.endsWith('.tiktok.com')))throw Error('Invalid TikTok URL');
    const match=u.pathname.split('/video/')[1]?.split('/')[0]?.match(/^[0-9]+$/)?.[0];
    if(match){
+    const notice=n('p','If the TikTok player does not load on your phone, use the Watch on TikTok link below.');notice.className='video-fallback-note';body.append(notice);
     const frame=n('iframe');frame.src='https://www.tiktok.com/player/v1/'+match;frame.title=resourceTitle(r);frame.loading='lazy';frame.allow='fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.className='tiktok-video-frame';body.append(frame);
    }else{body.append(n('p','TikTok short link: open the video below. Inline playback will be available once its full video URL is supplied.'))}
-   const a=n('a','▶ Watch on TikTok ↗');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.className='btn';body.append(a);
+   const a=n('a','▶ Watch on TikTok ↗');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.className='btn video-external-link';body.insertBefore(a,body.querySelector('.tiktok-video-frame'));
   }catch(e){body.append(n('p','Video link unavailable.'))}
  }else if(r.type==='solution'&&Array.isArray(r.steps)){
   r.steps.forEach(s=>{const box=n('div');box.className='step';box.append(n('strong',s.title),n('p',s.detail));body.append(box)});
