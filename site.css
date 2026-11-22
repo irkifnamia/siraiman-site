@@ -265,3 +265,22 @@ html{scroll-padding-top:90px}
 .video-watch-button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:44px;padding:10px 17px;border-radius:11px;background:#285b88;color:white;font-weight:700;text-decoration:none;white-space:nowrap}
 .video-watch-button:hover,.video-watch-button:focus-visible{background:#19466e;color:white}
 @media(max-width:390px){#results .video-resource-row{padding:16px 13px;gap:8px}.video-watch-button{padding:10px 12px}}
+
+/* v5.1 — compact, mobile-first resource filters */
+#materials .filters{padding:14px 16px;margin:16px 0 20px;border-radius:13px}
+#materials .filters>label{display:block;margin:0 0 5px;font-size:12px}
+#materials .filters input{height:42px;padding:8px 12px;margin:0 0 11px;font-size:14px}
+#materials .filter-grid{gap:9px}
+#materials .filter-grid label{display:block;font-size:11px;line-height:1.35;min-width:0}
+#materials .filters select{display:block;height:42px;margin-top:4px;padding:7px 27px 7px 10px;font-size:13px;text-overflow:ellipsis}
+#materials .filter-actions{margin-top:10px;gap:8px}
+#materials .filter-actions .clear{font-size:12px;padding:5px 0}
+#materials .filter-actions .count{font-size:12px}
+@media(max-width:650px){
+ #materials .filters{padding:12px;margin:12px 0 16px}
+ #materials .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #materials .filter-grid label:first-child{grid-column:1/-1}
+ #materials .filters input{height:40px;margin-bottom:9px}
+ #materials .filters select{height:40px;font-size:12px}
+}
+@media(max-width:350px){#materials .filter-grid{grid-template-columns:1fr}}
