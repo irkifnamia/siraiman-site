@@ -284,3 +284,7 @@ html{scroll-padding-top:90px}
  #materials .filters select{height:40px;font-size:12px}
 }
 @media(max-width:350px){#materials .filter-grid{grid-template-columns:1fr}}
+
+/* v5.2 — subject guides live on their respective subject pages */
+.subject-guide-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){.subject-guide-list{grid-template-columns:1fr}}
