@@ -41,10 +41,6 @@ function populate(body,r){
   const viewport=n('div');viewport.className='image-viewport';viewport.tabIndex=0;viewport.setAttribute('aria-label','Scrollable infographic image');
   const img=n('img');img.src=u.href;img.alt=resourceTitle(r);img.className='infographic-image';img.draggable=false;
   img.onerror=()=>viewport.replaceChildren(n('p','Unable to load this infographic. Please check the image file.'));
-  let zoom=1;const status=n('span','100%');status.className='zoom-status';status.setAttribute('aria-live','polite');
-  const setZoom=next=>{zoom=Math.max(.5,Math.min(3,Math.round(next*10)/10));img.style.width=(zoom*100)+'%';status.textContent=Math.round(zoom*100)+'%'};
-  const control=(label,action)=>{const b=n('button',label);b.type='button';b.className='image-tool';b.onclick=action;return b};
-  tools.append(control('− Zoom out',()=>setZoom(zoom-.25)),status,control('+ Zoom in',()=>setZoom(zoom+.25)),control('Reset',()=>{setZoom(1);viewport.scrollTo({top:0,left:0})}));
   const download=n('a','↓ Download');download.className='image-tool download-tool';download.href=u.href;download.download=resourceTitle(r).replace(/[^a-z0-9_-]+/gi,'-')+'.'+(u.pathname.split('.').pop().match(/^(png|jpe?g|webp|gif)$/i)?.[0]||'png');download.rel='noopener';tools.append(download);
   viewport.append(img);body.append(tools,viewport);
  }else if(r.type==='solution'&&Array.isArray(r.steps)){
