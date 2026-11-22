@@ -6,6 +6,26 @@
 const readline=require('node:readline/promises');
 const {stdin,stdout}=require('node:process');
 const {db,hashPassword}=require('../lib/lms');
+async function hiddenPrompt(prompt){
+ stdout.write(prompt);
+ const wasRaw=stdin.isRaw;
+ let value='';
+ stdin.setRawMode(true);stdin.resume();
+ try{
+  return await new Promise((resolve,reject)=>{
+   function onData(chunk){
+    const bytes=Buffer.from(chunk);
+    for(const byte of bytes){
+     if(byte===3){stdin.off('data',onData);reject(new Error('Cancelled'));return}
+     if(byte===10||byte===13){stdin.off('data',onData);stdout.write('\\n');resolve(value);return}
+     if(byte===127||byte===8){value=value.slice(0,-1);continue}
+     if(byte>=32&&byte<=126&&value.length<128)value+=String.fromCharCode(byte);
+    }
+   }
+   stdin.on('data',onData);
+  });
+ }finally{stdin.setRawMode(Boolean(wasRaw));}
+}
 async function main(){
  if(!stdin.isTTY||!stdout.isTTY)throw new Error('Run in an interactive terminal only');
  if(process.env.LMS_BOOTSTRAP_TEACHER!=='YES')throw new Error('Set LMS_BOOTSTRAP_TEACHER=YES for a one-time, locally approved bootstrap');
@@ -13,8 +33,8 @@ async function main(){
  try{
   const login=(await rl.question('Teacher login ID (not a student matric number): ')).trim().toLowerCase();
   if(!/^[a-z][a-z0-9._-]{5,39}$/.test(login))throw new Error('Login must be 6-40 characters, starting with a letter');
-  const password=await rl.question('Teacher password (12-128 characters; input visible, use a private terminal): ');
-  const confirm=await rl.question('Confirm password: ');
+  const password=await hiddenPrompt('Teacher password (12-128 characters, hidden): ');
+  const confirm=await hiddenPrompt('Confirm password (hidden): ');
   if(password!==confirm)throw new Error('Passwords differ');
   const confirmation=await rl.question('Type CREATE TEACHER to confirm: ');
   if(confirmation!=='CREATE TEACHER')throw new Error('Cancelled');
