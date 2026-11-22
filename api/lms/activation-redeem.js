@@ -16,8 +16,10 @@ module.exports=async(req,res)=>{
   const client=await p.connect();
   try{
    await client.query('BEGIN');
-   const found=await client.query(`SELECT c.id AS code_id,s.id AS student_id FROM student_activation_codes c JOIN students s ON s.id=c.student_id
-    WHERE upper(s.matric_number)=$1 AND c.code_hash=$2 AND c.used_at IS NULL AND c.revoked_at IS NULL AND c.expires_at>now() FOR UPDATE OF c`,[matric,codeHash(code)]);
+   // Serialize issuance and redemption on the same student row, preventing reissue races.
+   const student=await client.query('SELECT id FROM students WHERE upper(matric_number)=$1 FOR UPDATE',[matric]);
+   const found=student.rows.length?await client.query(`SELECT id AS code_id,student_id FROM student_activation_codes
+    WHERE student_id=$1 AND code_hash=$2 AND used_at IS NULL AND revoked_at IS NULL AND expires_at>now() FOR UPDATE`,[student.rows[0].id,codeHash(code)]):{rows:[]};
    if(!found.rows.length){
     await client.query('INSERT INTO student_activation_attempts(identifier_hash,succeeded) VALUES($1,false)',[key]);
     await client.query('COMMIT');
