@@ -25,3 +25,9 @@ $('login-form').addEventListener('submit',async e=>{
 });
 $('logout').addEventListener('click',async()=>{try{await request('logout',{method:'POST',body:'{}'})}finally{location.reload()}});
 refresh();
+
+$('issue-form').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=e.currentTarget.querySelector('button');const notice=$('issue-notice');btn.disabled=true;notice.textContent='Requesting code…';
+ try{const data=await request('activation-issue',{method:'POST',body:JSON.stringify({matric_number:$('issue-matric').value})});notice.textContent='One-time code for '+data.matric_number+': '+data.activation_code+' (expires in 48 hours). Copy and share privately; it will not be shown again.';}
+ catch(err){notice.textContent=err.message}finally{btn.disabled=false}
+});
