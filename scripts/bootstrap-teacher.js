@@ -33,10 +33,13 @@ async function main(){
  try{
   const login=(await rl.question('Teacher login ID (not a student matric number): ')).trim().toLowerCase();
   if(!/^[a-z][a-z0-9._-]{5,39}$/.test(login))throw new Error('Login must be 6-40 characters, starting with a letter');
+  rl.close();
   const password=await hiddenPrompt('Teacher password (12-128 characters, hidden): ');
   const confirm=await hiddenPrompt('Confirm password (hidden): ');
   if(password!==confirm)throw new Error('Passwords differ');
-  const confirmation=await rl.question('Type CREATE TEACHER to confirm: ');
+  const confirmRl=readline.createInterface({input:stdin,output:stdout});
+  const confirmation=await confirmRl.question('Type CREATE TEACHER to confirm: ');
+  confirmRl.close();
   if(confirmation!=='CREATE TEACHER')throw new Error('Cancelled');
   const hash=hashPassword(password);
   const client=await db().connect();
