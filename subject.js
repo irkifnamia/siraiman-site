@@ -9,7 +9,7 @@ function subch(c,id){return c?.subchapters.find(s=>s.id===id)}
 function updateSub(){const prev=sub.value;sub.replaceChildren(option('all','All subchapters'));subject.chapters.filter(c=>chapter.value==='all'||chapter.value===c.id).forEach(c=>c.subchapters.forEach(s=>sub.append(option(s.id,c.title+' · '+s.title))));sub.value=Array.from(sub.options).some(o=>o.value===prev)?prev:'all'}
 subject.chapters.forEach(c=>chapter.append(option(c.id,c.title)));updateSub();
 
-function resourceTitle(r){if(r.type!=='infographic')return r.title;const chapterNumber=(r.chapter||'').match(/-(\d+)$/)?.[1]||'?';const subNumber=(r.subchapter||'').match(/-(\d+)-(\d+)$/);const sc=subNumber?subNumber[1]+'.'+subNumber[2]:'?';const num=(r.id||'').match(/infographic-(\d+)$/)?.[1]||'1';return `${r.subject} / ${sc} / Infographic ${num}`}
+function resourceTitle(r){return r.title||'Untitled material'}
 function render(){
  const terms=search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
  const arr=D.resources.filter(r=>{if(r.subject!==id)return false;const c=ch(r.chapter),sc=subch(c,r.subchapter);const text=[resourceTitle(r),r.title,r.description,r.type,c?.title,sc?.title,...(r.tags||[])].join(' ').toLowerCase();return(type.value==='all'||r.type===type.value)&&(chapter.value==='all'||r.chapter===chapter.value)&&(sub.value==='all'||r.subchapter===sub.value)&&terms.every(t=>text.includes(t))});
