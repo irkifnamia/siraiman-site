@@ -27,3 +27,10 @@ Development branch only. Teacher provisioning has NOT been run; no teacher/stude
 - Preview currently connects to the imported Neon project; use a separate disposable Neon test branch for destructive integration tests.
 - Before student access, consider secure teacher password input and recovery, student identity verification, and data privacy.
 - No production deployment or `main` merge is authorized.
+
+## Isolated preview database (2026-11-23)
+- Neon branch `lms-phase2b-test` (`br-sparkling-bar-b3np4pvf`) was created from the default branch; 67 copied students, zero users, zero codes.
+- Migrations 002 and 003 were applied to this **testing branch only**.
+- The Vercel `DATABASE_URL` secret scoped to Git branch `lms-phase2b` / preview was switched to this testing branch; `AUTH_PEPPER` remains unchanged.
+- Vercel SSO protection is enabled for preview deployments; production settings and Neon default branch were not changed.
+- Student activation remains disabled; full API and concurrency tests are still pending.
