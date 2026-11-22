@@ -35,6 +35,7 @@ window.SIR_AIMAN_CONTENT = {
   // A solution may use steps:[{title:"Step 1",detail:"Explanation"}, ...]
   resources:[
     {id:"sm025-2-1a-video-1",title:"SM025 / 2.1(a) / Video 1",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"TikTok lesson for subchapter 2.1(a)",tags:["2.1a","2.1(a)","integration","video"],url:"https://www.tiktok.com/@aiman.fikri.90/video/7710746030077136136"},
+    {id:"sm025-2-1a-video-sheet-1",title:"SM025 / 2.1(a) / Video 1 (Drive Sheet)",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"Video 1 from the Chapter 2 Google Drive video spreadsheet",tags:["2.1a","integration","video"],url:"https://vt.tiktok.com/ZSsJb6etS/"},
     {id:"sm025-2-1a-video-2",title:"SM025 / 2.1(a) / Video 2",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"TikTok lesson 2 for 2.1(a)",tags:["2.1a","integration","video"],url:"https://vt.tiktok.com/ZSsJ3upGx/"},
     {id:"sm025-2-2a-video-1",title:"SM025 / 2.2(a) / Video 1",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.2a",description:"TikTok lesson for 2.2(a)",tags:["2.2a","integration","video"],url:"https://vt.tiktok.com/ZSsJwB4BC/"},
     {id:"sm025-2-2bc-video-1",title:"SM025 / 2.2(b–c) / Video 1",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.2",description:"TikTok lesson labeled 2.2(b) and 2.2(c) in the source spreadsheet; syllabus mapping pending verification",tags:["2.2b","2.2c","integration","video"],url:"https://vt.tiktok.com/ZSsJ3yxnU/"},
