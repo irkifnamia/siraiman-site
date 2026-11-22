@@ -29,7 +29,7 @@ window.SIR_AIMAN_CONTENT = {
   // Synced from verified Google Drive lecture source, 2026-11-22.\n  // Add actual resources here. No fake PDFs, videos or infographic links.
   // Example:
   // {id:"my-resource", title:"Graph Notes", type:"infographic", subject:"SM015",
-  // chapter:"sm015-1", subchapter:"sm015-1-1", description:"Visual guide",
+  // chapter:"sm015-1", subchapter:"sm015-1.1", description:"Visual guide",
   // tags:["graphs","functions"],url:"assets/graph-notes.png"}
   // Types: infographic, video, solution
   // A solution may use steps:[{title:"Step 1",detail:"Explanation"}, ...]
@@ -44,8 +44,13 @@ window.SIR_AIMAN_CONTENT = {
     {id:"sm025-2-1a-video-2",title:"SM025/2.1a/V2",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"TikTok lesson 2 for 2.1(a)",tags:["2.1a","integration","video"],url:"https://vt.tiktok.com/ZSsJ3upGx/"},
     {id:"sm025-2-2a-video-1",title:"SM025/2.2a/V",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.2a",description:"TikTok lesson for 2.2(a)",tags:["2.2a","integration","video"],url:"https://vt.tiktok.com/ZSsJwB4BC/"},
     {id:"sm025-2-2bc-video-1",title:"SM025/2.2b-2.2c/V",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.2",description:"TikTok lesson labeled 2.2(b) and 2.2(c) in the source spreadsheet; syllabus mapping pending verification",tags:["2.2b","2.2c","integration","video"],url:"https://vt.tiktok.com/ZSsJ3yxnU/"},
-    {id:"sm015-1-1-infographic-1",title:"SM015/1.1/IG1",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-1.png"},
-    {id:"sm015-1-1-infographic-2",title:"SM015/1.1/IG2",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-2.png"},
-    {id:"sm015-1-1-infographic-3",title:"SM015/1.1/IG3",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1-1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-3.png"}
+    {id:"sm015-1-1-infographic-4",title:"SM015/1.1/IG4",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.1",description:"Chapter 1 · 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-4.png"},
+    {id:"sm015-1-2-infographic-1",title:"SM015/1.2/IG1",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.2",description:"Chapter 1 · 1.2",tags:["chapter 1","1.2","infographic"],url:"materials/sm015/chapter-01/infographics/1.2-1.png"},
+    {id:"sm015-1-2-infographic-2",title:"SM015/1.2/IG2",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.2",description:"Chapter 1 · 1.2",tags:["chapter 1","1.2","infographic"],url:"materials/sm015/chapter-01/infographics/1.2-2.png"},
+    {id:"sm015-1-2-infographic-3",title:"SM015/1.2/IG3",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.2",description:"Chapter 1 · 1.2",tags:["chapter 1","1.2","infographic"],url:"materials/sm015/chapter-01/infographics/1.2-3.png"},
+    {id:"sm015-1-2-infographic-4",title:"SM015/1.2/IG4",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.2",description:"Chapter 1 · 1.2",tags:["chapter 1","1.2","infographic"],url:"materials/sm015/chapter-01/infographics/1.2-4.png"},
+    {id:"sm015-1-1-infographic-1",title:"SM015/1.1/IG1",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-1.png"},
+    {id:"sm015-1-1-infographic-2",title:"SM015/1.1/IG2",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-2.png"},
+    {id:"sm015-1-1-infographic-3",title:"SM015/1.1/IG3",type:"infographic",subject:"SM015",chapter:"sm015-1",subchapter:"sm015-1.1",description:"SM015 Chapter 1 · Subchapter 1.1",tags:["chapter 1","1.1","infographic"],url:"materials/sm015/chapter-01/infographics/1.1-3.png"}
   ]
 };
