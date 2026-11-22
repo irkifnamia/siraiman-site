@@ -17,7 +17,7 @@ module.exports=async(req,res)=>{
   const r=await p.query("SELECT u.id,u.password_hash,u.role FROM app_users u JOIN students s ON s.id=u.student_id WHERE upper(s.matric_number)=$1 AND u.status='active' LIMIT 1",[matric]);
   let user=r.rows[0];
   if(!user){
-   // Migration 003 is deliberately not applied yet; student login must still work.
+   // Support teacher login only when the teacher identifier migration is present.
    const col=await p.query("SELECT 1 FROM information_schema.columns WHERE table_name='app_users' AND column_name='login_identifier'");
    if(col.rowCount){const t=await p.query("SELECT id,password_hash,role FROM app_users WHERE lower(login_identifier)=$1 AND role='teacher' AND status='active' LIMIT 1",[identifier.toLowerCase()]);user=t.rows[0];}
   }
