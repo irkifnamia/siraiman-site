@@ -14,8 +14,13 @@ module.exports=async(req,res)=>{
   const p=db();
   const count=await p.query("SELECT count(*)::int AS n FROM auth_login_attempts WHERE identifier_hash=$1 AND attempted_at>now()-interval '15 minutes' AND succeeded=false",[key]);
   if(count.rows[0].n>=5) return json(res,429,{error:'Too many attempts. Try again later.'});
-  const r=await p.query("SELECT u.id,u.password_hash,u.role FROM app_users u LEFT JOIN students s ON s.id=u.student_id WHERE (upper(s.matric_number)=$1 OR lower(u.login_identifier)=$2) AND u.status='active' LIMIT 1",[matric,identifier.toLowerCase()]);
-  const user=r.rows[0];
+  const r=await p.query("SELECT u.id,u.password_hash,u.role FROM app_users u JOIN students s ON s.id=u.student_id WHERE upper(s.matric_number)=$1 AND u.status='active' LIMIT 1",[matric]);
+  let user=r.rows[0];
+  if(!user){
+   // Migration 003 is deliberately not applied yet; student login must still work.
+   const col=await p.query("SELECT 1 FROM information_schema.columns WHERE table_name='app_users' AND column_name='login_identifier'");
+   if(col.rowCount){const t=await p.query("SELECT id,password_hash,role FROM app_users WHERE lower(login_identifier)=$1 AND role='teacher' AND status='active' LIMIT 1",[identifier.toLowerCase()]);user=t.rows[0];}
+  }
   const ok=user?.password_hash?verifyPassword(password,user.password_hash):false;
   await p.query("INSERT INTO auth_login_attempts(identifier_hash,succeeded) VALUES($1,$2)",[key,ok]);
   if(!ok) return json(res,401,{error:'Invalid credentials'});
