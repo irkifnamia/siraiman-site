@@ -4,16 +4,17 @@ const {db,digest,verifyPassword,json,sameOrigin,setCookie}=require('../../lib/lm
 module.exports=async(req,res)=>{
  if(req.method!=='POST') return json(res,405,{error:'Method not allowed'});
  if(!sameOrigin(req)) return json(res,403,{error:'Invalid request origin'});
- const matric=typeof req.body?.matric_number==='string'?req.body.matric_number.trim().toUpperCase():'';
+ const identifier=typeof req.body?.matric_number==='string'?req.body.matric_number.trim():'';
+ const matric=identifier.toUpperCase();
  const password=req.body?.password;
- if(!/^[A-Z0-9]{6,24}$/.test(matric)||typeof password!=='string'||password.length>128) return json(res,400,{error:'Invalid credentials'});
+ if(!/^[A-Za-z0-9._-]{6,40}$/.test(identifier)||typeof password!=='string'||password.length>128) return json(res,400,{error:'Invalid credentials'});
  if(!process.env.AUTH_PEPPER) return json(res,503,{error:'Authentication is not configured'});
- const key=crypto.createHmac('sha256',process.env.AUTH_PEPPER).update(matric).digest('hex');
+ const key=crypto.createHmac('sha256',process.env.AUTH_PEPPER).update(identifier.toLowerCase()).digest('hex');
  try{
   const p=db();
   const count=await p.query("SELECT count(*)::int AS n FROM auth_login_attempts WHERE identifier_hash=$1 AND attempted_at>now()-interval '15 minutes' AND succeeded=false",[key]);
   if(count.rows[0].n>=5) return json(res,429,{error:'Too many attempts. Try again later.'});
-  const r=await p.query("SELECT u.id,u.password_hash,u.role FROM app_users u JOIN students s ON s.id=u.student_id WHERE upper(s.matric_number)=$1 AND u.status='active' LIMIT 1",[matric]);
+  const r=await p.query("SELECT u.id,u.password_hash,u.role FROM app_users u LEFT JOIN students s ON s.id=u.student_id WHERE (upper(s.matric_number)=$1 OR lower(u.login_identifier)=$2) AND u.status='active' LIMIT 1",[matric,identifier.toLowerCase()]);
   const user=r.rows[0];
   const ok=user?.password_hash?verifyPassword(password,user.password_hash):false;
   await p.query("INSERT INTO auth_login_attempts(identifier_hash,succeeded) VALUES($1,$2)",[key,ok]);
