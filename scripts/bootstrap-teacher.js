@@ -17,7 +17,7 @@ async function hiddenPrompt(prompt){
     const bytes=Buffer.from(chunk);
     for(const byte of bytes){
      if(byte===3){stdin.off('data',onData);reject(new Error('Cancelled'));return}
-     if(byte===10||byte===13){stdin.off('data',onData);stdout.write('\\n');resolve(value);return}
+     if(byte===10||byte===13){stdin.off('data',onData);stdout.write('\n');resolve(value);return}
      if(byte===127||byte===8){value=value.slice(0,-1);continue}
      if(byte>=32&&byte<=126&&value.length<128)value+=String.fromCharCode(byte);
     }
