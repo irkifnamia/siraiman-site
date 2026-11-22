@@ -34,6 +34,9 @@ window.SIR_AIMAN_CONTENT = {
   // Types: infographic, video, solution
   // A solution may use steps:[{title:"Step 1",detail:"Explanation"}, ...]
   resources:[
+    {id:"sm025-2-1a-infographic-1",title:"SM025/2.1(a)",type:"infographic",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"Chapter 2 Integration · 2.1(a)",tags:["integration","2.1a","infographic"],url:"materials/sm025/chapter-02/infographics/2.1a.png"},
+    {id:"sm025-2-1b-infographic-1",title:"SM025/2.1(b)",type:"infographic",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1b",description:"Chapter 2 Integration · 2.1(b)",tags:["integration","2.1b","infographic"],url:"materials/sm025/chapter-02/infographics/2.1b.png"},
+    {id:"sm025-2-1c-infographic-1",title:"SM025/2.1(c)",type:"infographic",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1c",description:"Chapter 2 Integration · 2.1(c)",tags:["integration","2.1c","infographic"],url:"materials/sm025/chapter-02/infographics/2.1c.png"},
     {id:"sm025-2-1a-video-1",title:"SM025/2.1(a)/V1",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"TikTok lesson for subchapter 2.1(a)",tags:["2.1a","2.1(a)","integration","video"],url:"https://www.tiktok.com/@aiman.fikri.90/video/7710746030077136136"},
     {id:"sm025-2-1a-video-2",title:"SM025/2.1(a)/V2",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.1a",description:"TikTok lesson 2 for 2.1(a)",tags:["2.1a","integration","video"],url:"https://vt.tiktok.com/ZSsJ3upGx/"},
     {id:"sm025-2-2a-video-1",title:"SM025/2.2(a)",type:"video",subject:"SM025",chapter:"sm025-2",subchapter:"sm025-2.2a",description:"TikTok lesson for 2.2(a)",tags:["2.2a","integration","video"],url:"https://vt.tiktok.com/ZSsJwB4BC/"},
