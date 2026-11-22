@@ -21,7 +21,7 @@ function render(){
    const tag=n('span','VIDEO');tag.className='tag';
    info.append(tag,n('h3',resourceTitle(r)));
    const watch=n('a','▶ Watch');watch.className='video-watch-button';
-   try{const u=new URL(r.url,location.href);if(u.protocol==='https:'&&(['tiktok.com','www.tiktok.com','m.tiktok.com'].includes(u.hostname))){watch.href=u.href;watch.target='_blank';watch.rel='noopener noreferrer'}else{watch.removeAttribute('href')}}catch(e){watch.removeAttribute('href')}
+   try{const u=new URL(r.url,location.href);if(u.protocol==='https:'&&(['tiktok.com','www.tiktok.com','m.tiktok.com','vt.tiktok.com','vm.tiktok.com'].includes(u.hostname))){watch.href=u.href;watch.target='_blank';watch.rel='noopener noreferrer'}else{watch.removeAttribute('href')}}catch(e){watch.removeAttribute('href')}
    card.append(info,watch);results.append(card);return;
   }
   const card=n('details');card.className='result resource-accordion';
