@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "SIR AIMAN SITE — Math & Stats Learning Hub",
+  "short_name": "SIR AIMAN",
+  "description": "Matriculation Mathematics SM015 and SM025 learning materials",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7fafc",
+  "theme_color": "#203653",
+  "icons": [
+    {
+      "src": "/icons/sa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
